@@ -8,7 +8,8 @@ export function ChallengeBox() {
     const { resetCountdown } = useContext(CountdownContext);
 
     function handleChallengeSucceeded() {
-
+        completeChallenge();
+        resetCountdown();
     }
 
     function handleChallengeFailed() {
@@ -34,7 +35,7 @@ export function ChallengeBox() {
                         <button
                             type="button"
                             className={styles.challengeFailedButton}
-                            onClick={resetChallenge}
+                            onClick={handleChallengeFailed}
                         >
                             Falhei
                         </button>
@@ -42,7 +43,7 @@ export function ChallengeBox() {
                         <button
                             type="button"
                             className={styles.challengeSucceededButton}
-                            onClick={completeChallenge}
+                            onClick={handleChallengeSucceeded}
                         >
                             Completei
                         </button>
